@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN/LOGOUT</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+<link rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!--fontawesome icons/ boostrap-->
+  <link rel="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+</style>
+</head>
+<body>
+    <nav> <div class="navbar-fixed wheat">
+        <div class="container">
+        <div class="nav-wrapper">
+        <a href="index.html" class="brand-logo">
+    HOME PAGE
+        </a>
+        <a href="#" data-target="slide-out" class="sidenav-trigger">
+          <i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+            <li><a class="modal-trigger logged-out" href="#modal1">SIGN-UP</a></li>
+            <li><a href ="./contact.html" class="logged-in" >CONTACT US</a></li>
+            <li><a href="./login.html" class="logged-out">LOGIN</a></li>
+            <li><a href="./login.html" id="logout" class="logged-in">LOGOUT</a></li>
+    </ul>
+        </div>
+        </div>
+        </div>
+        <ul id="slide-out" class="sidenav">
+            <li><a class="modal-trigger logged-out" href="#modal1">SIGN-UP</a></li>
+            <li><a href ="./contact.html" class="logged-in" >CONTACT US</a></li>
+            <li><a href="./login.html" class="logged-out">LOGIN</a></li>
+            <li><a href="./login.html" id="logout" class="logged-in">LOGOUT</a></li>
+        </ul>
+  </nav>
+
+<div class="container">
+    <form class="loginUser">
+        <h3>LOGIN</h3>
+        <div class="input-field">
+            <input type="email" placeholder="email" name="login_email" required>
+        </div>
+<div class="input-field">
+<input type="password" placeholder="password" name="login_password" required>   
+        </div>
+        <p class="errorstat2" style="color: rgb(235, 44, 203);"></p>
+        <button class="btn large teal center">SUBMIT</button>
+    </form>
+</div>
+    <div class="modal" id="modal1">
+        <div class="container">
+            <h2 class="center">Kindly Sign up If its Your First Time</h2>
+            <form class="signupform">
+                <div class="input-field">
+                    <input type="email" placeholder="email" 
+                    name="signup_email" id="signup_email" required>
+                    <label for="email"><i class="material-icons">email</i></label>
+                </div>
+                <div class="input-field">
+                    <input type="password" placeholder="password" 
+                    name="signup_password"  id="signup_password"  required>
+                    <label for="password"><i class="material-icons">password</i></label>
+                </div>
+                <p class="errorstat1" style="color: rgb(235, 44, 203);"></p>
+                <p class="welcometext" style="color: rgb(235, 44, 203);"></p>
+                <button class="btn large teal center">SUBMIT</button>
+            </form>
+        </div> 
+    </div>
+      <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-firestore.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyCap3QSswIYsLenYVTL8y45iY4zm-T4zRU",
+    authDomain: "churchproj-e6b4c.firebaseapp.com",
+    projectId: "churchproj-e6b4c",
+    storageBucket: "churchproj-e6b4c.appspot.com",
+    messagingSenderId: "440427847931",
+    appId: "1:440427847931:web:cc4485350b25754815105e",
+    measurementId: "G-X62332Y60H"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+  db.settings({timestampsInSnapshots: true});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/ketchup.all.js"></script>
+<script src="js/contact_form.js"></script>
+<script src="js/script.js"></script>
+<script src="./auth.js"></script>
+<script src="./app.js"></script>
+<script src="./index.js"></script>
+</body>
+</html>
